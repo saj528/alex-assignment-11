@@ -1,0 +1,14 @@
+<html xmlns:th="http://thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 th:inline="text">Transaction ID: [[${transaction.id}]] ([[${transaction.type == 'C' ? 'Credit' : 'Debit'}]])</h3>
+<p th:inline="text">Date: [[${transaction.date}]]</p>
+<p th:inline="text">Amount: [[${transaction.type == 'C' ? '-' : ''}]][[${transaction.amount}]] </p>
+<p th:inline="text">Description: [[${transaction.description}]]</p>
+<a href="/transactions">back</a>
+</body>
+</html>
